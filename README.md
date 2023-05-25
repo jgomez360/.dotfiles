@@ -21,7 +21,12 @@ $ stow neovim # plus whatever else you'd like
 * [NvChad][nvchad] for a solid default NeoVim config.
 
 I install [Conda][conda], specifically [Miniconda][miniconda], to manage
-Python environments. 
+Node and Python environments. 
+
+```shell
+conda create -n neovim -c conda-forge nodejs=18
+conda install python=3.11
+```
 
 The [language server configuration][lsp] requires the relevant servers to be
 installed:
@@ -29,8 +34,10 @@ installed:
 ```shell
 # Python
 $ npm install -g pyright
-# Rust
+# Rust (MacOS)
 $ brew install rust-analyzer
+# Rust (Linux)
+$ rustup component add rust-analyzer
 # Solidity
 $ npm install -g solc
 $ npm install -g prettier prettier-plugin-solidity
