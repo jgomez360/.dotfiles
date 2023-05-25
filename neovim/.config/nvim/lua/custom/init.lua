@@ -6,7 +6,7 @@ opt.number = true -- shows absolute line number on cursor line (when relative nu
 
 -- tabs & indentation
 opt.tabstop = 4 -- 4 spaces for tabs
-opt.softtabstop = 4 -- 4 spaces on tab press 
+opt.softtabstop = 4 -- 4 spaces on tab press
 opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
