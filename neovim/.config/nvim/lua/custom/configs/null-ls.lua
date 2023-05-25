@@ -5,11 +5,13 @@ local lint = null_ls.builtins.diagnostics
 
 local sources = {
     formatting.rustfmt,
+    formatting.prettier.with({
+        extra_filetypes = { "solidity" },
+    }),
     formatting.stylua,
 
     lint.mypy,
     lint.shellcheck,
-    lint.solhint,
 }
 
 null_ls.setup {

@@ -71,10 +71,10 @@ local plugins = {
             ensure_installed = {
                 "lua-language-server",
                 "mypy",
+                "nomicfoundation-solidity-language-server",
                 "pyright",
                 "rust-analyzer",
                 "rustfmt",
-                "solhint",
             },
         },
     }
