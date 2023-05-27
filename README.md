@@ -34,15 +34,12 @@ python3 -m pip install --user --upgrade pynvim
 The [language server configuration][lsp] requires the relevant servers to be
 installed:
 
+* [Rust-Analyzer][rust-analyzer] for Rust LSP support.
+* [Solidity][solidity] for editing and compiling Solidity smart contracts.
+
 ```shell
 # Python
 $ npm install -g pyright
-# Rust (MacOS)
-$ brew install rust-analyzer
-# Rust (Linux)
-$ rustup component add rust-analyzer
-# Solidity
-$ npm install -g solc
 $ npm install -g prettier prettier-plugin-solidity
 $ npm install -g @ignored/solidity-language-server
 ```
@@ -54,4 +51,5 @@ $ npm install -g @ignored/solidity-language-server
 [nvchad]: https://nvchad.com/docs/quickstart/install
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [lsp]: https://github.com/neovim/nvim-lspconfig
-
+[solidity]: https://docs.soliditylang.org/en/v0.8.20/installing-solidity.html
+[rust-analyzer]: https://rust-analyzer.github.io/
