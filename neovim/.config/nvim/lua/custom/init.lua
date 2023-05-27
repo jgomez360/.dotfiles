@@ -1,5 +1,16 @@
 local opt = vim.opt -- for conciseness
 
+-- Use virtual env just for NeoVim
+vim.g.loaded_node_provider = nil
+vim.g.loaded_python3_provider = nil
+vim.g.node_host_prog = vim.env.HOME .. '/miniconda3/envs/neovim/bin/neovim-node-host'
+vim.g.python3_host_prog = vim.env.HOME .. '/miniconda3/envs/neovim/bin/python3'
+
+-- Disable unused remote providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)

@@ -25,7 +25,10 @@ Node and Python environments.
 
 ```shell
 conda create -n neovim -c conda-forge nodejs=18
+conda activate neovim
+npm install -g neovim
 conda install python=3.11
+python3 -m pip install --user --upgrade pynvim
 ```
 
 The [language server configuration][lsp] requires the relevant servers to be
