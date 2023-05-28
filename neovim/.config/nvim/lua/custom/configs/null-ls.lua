@@ -6,12 +6,8 @@ local lint = null_ls.builtins.diagnostics
 local sources = {
 	formatting.rustfmt,
 	formatting.prettier.with({
-		-- filetypes = { "yaml" },
-		extra_filetypes = { "solidity" },
-	}),
-	formatting.prettierd.with({
 		filetypes = { "yaml" },
-		-- extra_filetypes = { "solidity" },
+		extra_filetypes = { "solidity" },
 	}),
 	formatting.stylua,
 

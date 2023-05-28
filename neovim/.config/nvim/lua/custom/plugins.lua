@@ -78,7 +78,6 @@ local plugins = {
 				"mypy",
 				"nomicfoundation-solidity-language-server",
 				"prettier",
-				"prettierd",
 				"pyright",
 				"rust-analyzer",
 				"rustfmt",

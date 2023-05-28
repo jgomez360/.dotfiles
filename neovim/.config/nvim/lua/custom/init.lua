@@ -1,7 +1,8 @@
 local opt = vim.opt -- for conciseness
 
 -- for mason.nvim
-vim.cmd("let $PATH = '" .. vim.env.HOME .. "/miniconda3/envs/neovim/bin" .. ":' . $PATH")
+-- vim.cmd("let $PATH = '" .. vim.env.HOME .. "/miniconda3/envs/neovim/bin" .. ":' . $PATH")
+-- vim.cmd("echo $PATH")
 
 -- Use virtual env just for NeoVim
 vim.g.loaded_node_provider = nil

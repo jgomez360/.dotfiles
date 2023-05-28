@@ -34,18 +34,13 @@ lspconfig.rust_analyzer.setup({
 	},
 })
 
-lspconfig.solc.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "solidity" },
-	root_dir = lspconfig.util.root_pattern("foundry.toml"),
-})
-
 lspconfig.solidity.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+    -- cmd_env = {VIRTUAL_ENV = "$HOMEl/miniconda3/envs/neovim"},
 	filetypes = { "solidity" },
-	root_dir = lspconfig.util.root_pattern("foundry.toml"),
+	-- root_dir = lspconfig.util.root_pattern("foundry.toml"),
+	root_dir = lspconfig.util.root_pattern(".prettierrc"),
 	single_file_support = true,
 })
