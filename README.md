@@ -29,6 +29,7 @@ conda activate neovim
 npm install -g neovim
 conda install python=3.11
 python3 -m pip install --user --upgrade pynvim
+conda deactivate
 ```
 
 The [language server configuration][lsp] requires the relevant servers to be
@@ -38,7 +39,9 @@ installed:
 * [ShellCheck][shellcheck] for warnings and suggestions for bash/sh shell scripts.
 * Prettier and prettier-plugin-solidity for Solidity formatting.
 ```shell
-$ npm install -g prettier prettier-plugin-solidity
+conda activate neovim
+npm install -g prettier prettier-plugin-solidity
+conda deactivate
 ```
 
 [neovim]: https://neovim.io/
