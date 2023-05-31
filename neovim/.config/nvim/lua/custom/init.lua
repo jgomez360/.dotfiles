@@ -29,12 +29,19 @@ opt.smartindent = true -- indent reacts to the syntax/style of the code
 
 opt.wrap = false -- do not wrap to newlines by default
 
-opt.hlsearch = false -- do not highlight all search matches
+-- opt.hlsearch = false -- do not highlight all search matches
 opt.incsearch = true -- highlight the searching string while typing
 
 opt.termguicolors = true -- emits true (24-bit) colours in the terminal
 
-opt.scrolloff = 8 -- keep number of context lines above and below the cursor
+-- Have some context around the current line always on screen
+opt.scrolloff = 8
+opt.sidescrolloff = 5
+
+-- show trailing whitespace as -, tabs as >-
+vim.o.listchars = 'tab:>-,trail:-'
+vim.o.list = true
+
 -- vim.opt.signcolumn = "yes"
 -- vim.opt.isfname:append("@-@")
 
@@ -44,3 +51,4 @@ opt.scrolloff = 8 -- keep number of context lines above and below the cursor
 
 -- opt.foldmethod = "indent" -- support for files with no braces (python, yaml, etc)
 -- opt.foldlevelstart = 20 -- expand all folds on open
+
