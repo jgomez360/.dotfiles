@@ -4,6 +4,8 @@ local lspconfig = require("lspconfig")
 
 lspconfig.pyright.setup({
 	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "python" },
 	settings = {
 		pyright = {
 			autoImportCompletion = true,
@@ -38,7 +40,7 @@ lspconfig.solidity.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-    -- cmd_env = {VIRTUAL_ENV = "$HOMEl/miniconda3/envs/neovim"},
+	-- cmd_env = {VIRTUAL_ENV = "$HOMEl/miniconda3/envs/neovim"},
 	filetypes = { "solidity" },
 	-- root_dir = lspconfig.util.root_pattern("foundry.toml"),
 	root_dir = lspconfig.util.root_pattern(".prettierrc"),

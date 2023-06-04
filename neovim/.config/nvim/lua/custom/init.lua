@@ -7,8 +7,8 @@ local opt = vim.opt -- for conciseness
 -- Use virtual env just for NeoVim
 vim.g.loaded_node_provider = nil
 vim.g.loaded_python3_provider = nil
-vim.g.node_host_prog = vim.env.HOME .. '/miniconda3/envs/neovim/bin/neovim-node-host'
-vim.g.python3_host_prog = vim.env.HOME .. '/miniconda3/envs/neovim/bin/python3'
+vim.g.node_host_prog = vim.env.HOME .. "/miniconda3/envs/neovim/bin/neovim-node-host"
+vim.g.python3_host_prog = vim.env.HOME .. "/miniconda3/envs/neovim/bin/python3"
 
 -- Disable unused remote providers
 vim.g.loaded_perl_provider = 0
@@ -39,7 +39,7 @@ opt.scrolloff = 8
 opt.sidescrolloff = 5
 
 -- show trailing whitespace as -, tabs as >-
-vim.o.listchars = 'tab:>-,trail:-'
+vim.o.listchars = "tab:>-,trail:-"
 vim.o.list = true
 
 -- vim.opt.signcolumn = "yes"
@@ -51,4 +51,3 @@ vim.o.list = true
 
 -- opt.foldmethod = "indent" -- support for files with no braces (python, yaml, etc)
 -- opt.foldlevelstart = 20 -- expand all folds on open
-

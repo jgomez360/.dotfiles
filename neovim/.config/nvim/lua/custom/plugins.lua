@@ -74,11 +74,14 @@ local plugins = {
 		"williamboman/mason.nvim",
 		opts = {
 			ensure_installed = {
+				"black",
+				"mypy",
 				"lua-language-server",
 				"mypy",
 				"nomicfoundation-solidity-language-server",
 				"prettier",
 				"pyright",
+				"ruff",
 				"rust-analyzer",
 				"rustfmt",
 			},
