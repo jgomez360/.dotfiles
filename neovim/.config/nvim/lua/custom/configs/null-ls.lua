@@ -10,7 +10,7 @@ local sources = {
 	}),
 	formatting.rustfmt,
 	formatting.prettier.with({
-		filetypes = { "yaml" },
+		filetypes = { "json", "yaml" },
 		extra_filetypes = { "solidity" },
 	}),
 	formatting.stylua,

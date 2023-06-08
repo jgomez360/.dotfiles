@@ -41,6 +41,7 @@ local plugins = {
 				"lua",
 
 				-- extra
+				"json",
 				"yaml",
 
 				-- web3
