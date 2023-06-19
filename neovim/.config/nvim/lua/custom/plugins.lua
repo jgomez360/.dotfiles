@@ -51,6 +51,7 @@ local plugins = {
 				"python",
 
 				-- low level
+				"go",
 				"rust",
 			},
 		},
@@ -76,6 +77,7 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"black",
+				"gopls",
 				"mypy",
 				"lua-language-server",
 				"mypy",

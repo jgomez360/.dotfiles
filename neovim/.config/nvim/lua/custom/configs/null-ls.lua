@@ -8,6 +8,8 @@ local sources = {
 	formatting.black.with({
 		extra_args = { "--line-length=120" },
 	}),
+	formatting.gofmt,
+	formatting.goimports,
 	formatting.rustfmt,
 	formatting.prettier.with({
 		filetypes = { "json", "yaml" },
