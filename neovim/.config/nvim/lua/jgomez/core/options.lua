@@ -22,6 +22,7 @@ keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decremen
 -- navigate buffers
 keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Go to next buffer" }) --  go to next buffer
 keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Go to previous buffer" }) --  go to previous buffer
+keymap.set("n", "<leader>x", ":Bdelete<CR>", { desc = "Close the current buffer" }) --  close current buffer
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically

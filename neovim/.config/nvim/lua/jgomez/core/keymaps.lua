@@ -15,6 +15,10 @@ opt.smartindent = true -- indent reacts to the syntax/style of the code
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append("<>[]hl")
+
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
