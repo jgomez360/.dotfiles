@@ -28,6 +28,10 @@ opt.incsearch = true -- highlight the searching string while typing
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
+-- command line auto completion
+opt.wildmenu = true
+opt.wildmode = "longest,list,full"
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
