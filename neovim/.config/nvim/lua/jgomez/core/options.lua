@@ -19,6 +19,10 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
+-- navigate buffers
+keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Go to next buffer" }) --  go to next buffer
+keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Go to previous buffer" }) --  go to previous buffer
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally

@@ -4,7 +4,8 @@ return {
     version = "*",
     opts = { -- require(bufferline).setup(opts)
         options = {
-            mode = "tabs",
+            -- mode = "tabs",
+            offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
             separator_style = "slant",
         },
     },
