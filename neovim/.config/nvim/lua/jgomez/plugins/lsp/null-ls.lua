@@ -19,6 +19,7 @@ return {
             root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git"),
             -- setup formatters & linters
             sources = {
+                formatting.black,
                 formatting.prettier.with({
                     filetypes = { "json", "yaml" },
                     exclude_filetypes = { "python" },

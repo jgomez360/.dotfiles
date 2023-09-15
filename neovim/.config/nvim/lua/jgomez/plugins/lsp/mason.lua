@@ -39,6 +39,7 @@ return {
         mason_null_ls.setup({
             -- list of formatters & linters for mason to install
             ensure_installed = {
+                "black",
                 "prettier",
                 "solidity_language_server",
                 "stylua",
