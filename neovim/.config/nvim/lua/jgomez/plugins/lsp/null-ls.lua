@@ -25,6 +25,7 @@ return {
                     exclude_filetypes = { "python" },
                     extra_filetypes = { "solidity" },
                 }),
+                formatting.rustfmt,
                 formatting.stylua, -- lua formatter
             },
             -- configure format on save
