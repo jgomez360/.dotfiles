@@ -41,7 +41,7 @@ return {
             ensure_installed = {
                 "black",
                 "prettier",
-                "solidity_language_server",
+                "nomicfoundation-solidity-language-server",
                 "stylua",
                 "ruff",
                 "ruff_lsp",
