@@ -45,7 +45,7 @@ installed:
 * Prettier and prettier-plugin-solidity for Solidity formatting.
 ```shell
 conda activate neovim
-npm install -g prettier prettier-plugin-solidity
+npm install -g @fsouza/prettierd prettier-plugin-solidity
 conda deactivate
 ```
 
