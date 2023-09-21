@@ -20,7 +20,7 @@ return {
             -- setup formatters & linters
             sources = {
                 formatting.black,
-                formatting.prettier.with({
+                formatting.prettierd.with({
                     filetypes = { "json", "yaml" },
                     exclude_filetypes = { "python" },
                     extra_filetypes = { "solidity" },

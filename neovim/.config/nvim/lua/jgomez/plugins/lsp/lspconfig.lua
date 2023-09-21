@@ -132,8 +132,8 @@ return {
             capabilities = capabilities,
             cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
             filetypes = { "solidity" },
-            -- root_dir = lspconfig.util.root_pattern("foundry.toml"),
-            root_dir = lspconfig.util.root_pattern(".prettierrc"),
+            root_dir = lspconfig.util.root_pattern("foundry.toml"),
+            -- root_dir = lspconfig.util.root_pattern(".prettierrc"),
             single_file_support = true,
         })
     end,

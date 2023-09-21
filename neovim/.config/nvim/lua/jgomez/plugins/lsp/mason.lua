@@ -40,7 +40,7 @@ return {
             -- list of formatters & linters for mason to install
             ensure_installed = {
                 "black",
-                "prettier",
+                "prettierd",
                 "nomicfoundation-solidity-language-server",
                 "stylua",
                 "ruff",
