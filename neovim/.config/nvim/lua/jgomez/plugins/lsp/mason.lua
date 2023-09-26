@@ -45,6 +45,7 @@ return {
                 "stylua",
                 "ruff",
                 "ruff_lsp",
+                "taplo",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true,
