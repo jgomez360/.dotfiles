@@ -12,7 +12,7 @@ return {
 
         telescope.setup({
             defaults = {
-                file_ignore_patterns = { "^.git/" },
+                file_ignore_patterns = { "^.git/", "node_modules" },
                 path_display = { "truncate " },
                 mappings = {
                     i = {
@@ -20,6 +20,17 @@ return {
                         ["<C-j>"] = actions.move_selection_next,     -- move to next result
                         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
                     },
+                },
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--hidden",
+                    "--smart-case",
+                    "-u",
                 },
             },
             pickers = {
