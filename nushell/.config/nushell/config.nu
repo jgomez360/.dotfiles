@@ -771,6 +771,7 @@ alias gd = git diff
 alias gl = git log
 alias gs = git status
 alias graph = git log --all --decorate --oneline --graph
+alias ta = tmux attach
 
 use ~/.cache/starship/init.nu
 
