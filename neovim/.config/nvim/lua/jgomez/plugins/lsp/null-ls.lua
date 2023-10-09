@@ -19,6 +19,7 @@ return {
             root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git"),
             -- setup formatters & linters
             sources = {
+                formatting.bean_format,
                 formatting.black,
                 formatting.taplo.with({
                     filetypes = { "toml" },

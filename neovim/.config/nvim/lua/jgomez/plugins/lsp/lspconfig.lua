@@ -70,6 +70,12 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        lspconfig["beancount"].setup({
+            init_options = {
+                journal_file = "/srv/fava/personal/main.beancount",
+            },
+        })
+
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
