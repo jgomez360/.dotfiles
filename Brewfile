@@ -1,6 +1,5 @@
 if OS.mac?
     # taps
-    tap "homebrew/cask"
     tap "homebrew/cask-fonts"
     tap "koekeishiya/formulae"
 
@@ -15,8 +14,7 @@ if OS.mac?
     brew "skhd"
 
     # Fonts
-    cask "font-jetbrains-mono"
-    cask "font-meslo-lg-nerd-font"
+    cask "font-jetbrains-mono-nerd-font"
 elsif OS.linux?
     brew "xclip" # access to clipboard (similar to pbcopy/pbpaste)
 end
