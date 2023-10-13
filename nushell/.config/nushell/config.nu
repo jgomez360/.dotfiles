@@ -766,6 +766,11 @@ $env.config = {
 alias python = python3
 alias vim = nvim
 
+# Exa
+alias ll = exa -l -g --icons --git
+alias llt = exa -1 --icons --tree --git-ignore
+alias ls = exa -l -g --icons --git
+
 # Git
 alias gd = git diff
 alias gl = git log
