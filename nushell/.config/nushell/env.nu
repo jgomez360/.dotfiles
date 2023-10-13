@@ -95,14 +95,14 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '$HOME/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
 
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jaime/miniconda3/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jaime/.cargo/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jaime/.foundry/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jaime/.huff/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jaime/.local/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/miniconda3/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.foundry/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.huff/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
 
 # macOS ARM64 (Apple Silicon)
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
