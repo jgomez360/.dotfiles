@@ -1,9 +1,13 @@
-source accounts/gmail.muttrc
-
+# Load colors
 source color.muttrc
 
+# Where to put the stuff
+set header_cache = "~/.mutt/headers"
+set message_cachedir = "~/.mutt/bodies"
+set certificate_file = "~/.mutt/certificates"
+
 # settings
-set pager_index_lines = 10          
+set pager_index_lines = 10
 set pager_context = 3                # show 3 lines of context
 set pager_stop                       # stop at end of message
 set menu_scroll                      # scroll menu
@@ -12,7 +16,7 @@ set move=no                          # don't move messages when marking as read
 set mail_check = 30                  # check for new mail every 30 seconds
 set imap_keepalive = 900             # 15 minutes
 set sleep_time = 0                   # don't sleep when idle
-set wait_key = no		     # mutt won't ask "press key to continue"
+set wait_key = no                    # mutt won't ask "press key to continue"
 set envelope_from                    # which from?
 set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
@@ -27,8 +31,16 @@ set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set text_flowed=yes                  # correct indentation for plain text
+set auto_tag=yes                     # apply commands to all tagged messages
 unset sig_dashes                     # no dashes before sig
 unset markers
+unset record                        # prevent dups in Sent
+unset move                          # gmail does that
+unset mark_old                      # read/new is good enough
+unset confirmappend                 # don't ask, just do!
+set delete = yes                    # don't ask, just do!
+set quit = yes                      # don't ask, just do!
+set sort_alias = alias              # sort by alias
 
 # Sort by newest conversation first.
 set charset = "utf-8"
@@ -44,7 +56,29 @@ set send_charset = "utf-8:iso-8859-1:us-ascii" # send in utf-8
 # Editor
 set editor = "nvim"
 
+# link to mailcap file
+set mailcap_path = "~/.config/mutt/mailcap"
+# open attachments with mailcap with <return>
+bind attach <return> view-mailcap
+# save attachments to a folder
+macro attach s '<save-entry> <bol>~/Documents/attachments/<eol>' 'save attachment'
+auto_view text/html # automatically show html (mailcap uses lynx)
+
+# Sidebar
+set sidebar_visible # comment to disable sidebar by default
+set sidebar_short_path
+# set sidebar_sort_method = alpha
+set sidebar_folder_indent
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+set mail_check_stats
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+bind index,pager O sidebar-open
+bind index,pager b sidebar-toggle-visible
+
 # Keybindings
+bind attach,index,pager g noop
+
 bind index j next-entry
 bind index k previous-entry
 bind pager j next-line
@@ -52,26 +86,27 @@ bind pager k previous-line
 
 bind attach,index,pager \CD next-page
 bind attach,index,pager \CU previous-page
-bind pager g top
-bind pager G bottom
-bind attach,index g first-entry
+bind attach,index gg first-entry
 bind attach,index G last-entry
 
-# link to mailcap file
-set mailcap_path = "$XDG_CONFIG_HOME/mutt/mailcap"
-# open attachments with mailcap with <return>
-bind attach <return> view-mailcap             
-# save attachments to a folder
-macro attach s '<save-entry> <bol>~/Documents/attachments/<eol>' 'save attachment'
-auto_view text/html		# automatically show html (mailcap uses lynx)
+# folder navigation
+macro index,pager gi          "<change-folder>+INBOX<enter>" "Go to inbox"
+# macro index,pager ga          "<change-folder>+[Gmail]/All Mail<enter>" "Go to all mail"
+# macro index,pager gt          "<change-folder>+[Gmail]/Trash<enter>" "Go to trash"
 
-# Sidebar
-set sidebar_visible # comment to disable sidebar by default
-set sidebar_short_path
-set sidebar_folder_indent
-set sidebar_format = "%B %* [%?N?%N / ?%S]"
-set mail_check_stats
-bind index,pager \CJ sidebar-prev
-bind index,pager \CK sidebar-next
-bind index,pager \CE sidebar-open
-bind index,pager B sidebar-toggle-visible
+# message handling
+macro index,pager Mi           "<save-message>+INBOX<enter>" "Move mail to inbox"
+# macro index,pager Ma           "<save-message>+[Gmail]/All Mail<enter>" "Move mail to archive"
+# macro index,pager Mt           "<save-message>+[Gmail]/Trash<enter>" "Move mail to trash"
+
+# browser keybindings
+macro browser <space>   <check-new>
+macro browser <right>   <select-entry>
+macro browser <left>    <home><return> "Goto previous folder" 
+
+# editor keybindings
+bind editor <space>     noop
+bind editor <Tab>       complete-query
+
+# Load account
+source accounts/gmail.muttrc
