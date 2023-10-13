@@ -779,4 +779,4 @@ alias graph = git log --all --decorate --oneline --graph
 alias ta = tmux attach
 
 use ~/.cache/starship/init.nu
-
+use ~/.config/nushell/scripts/virtual_environments/conda.nu
