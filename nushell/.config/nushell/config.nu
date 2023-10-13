@@ -778,6 +778,9 @@ alias gs = git status
 alias graph = git log --all --decorate --oneline --graph
 alias ta = tmux attach
 
+# Neomutt
+alias mail = neomutt
+
 use ~/.cache/starship/init.nu
 use ~/.config/nushell/scripts/weather/get-weather.nu get_weather
 use ~/.config/nushell/scripts/virtual_environments/conda.nu

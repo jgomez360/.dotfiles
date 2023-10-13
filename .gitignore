@@ -1,3 +1,4 @@
 Brewfile.lock.json
 lazy-lock.json
+neomutt/.config/mutt/accounts
 tmux/.config/tmux/plugins
