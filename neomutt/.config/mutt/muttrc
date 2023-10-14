@@ -89,6 +89,8 @@ bind attach,index,pager \CU previous-page
 bind attach,index gg first-entry
 bind attach,index G last-entry
 
+macro index,pager S          "<sync-mailbox>" "Symc mailbox"
+
 # folder navigation
 macro index,pager gi          "<change-folder>+INBOX<enter>" "Go to inbox"
 # macro index,pager ga          "<change-folder>+[Gmail]/All Mail<enter>" "Go to all mail"
