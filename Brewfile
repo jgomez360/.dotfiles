@@ -2,6 +2,7 @@ if OS.mac?
     # taps
     tap "homebrew/cask-fonts"
     tap "koekeishiya/formulae"
+    tap "achannarasappa"
 
     brew "noti" # utility to display notifications from scripts
     brew "trash" # rm, but put in the trash rather than completely delete
@@ -43,7 +44,7 @@ brew "rsync" # incremental file transfers
 brew "shellcheck" # diagnostics for shell sripts
 brew "starship" # cross-shell prompt
 brew "stow" # link config files
-brew "achannarasappa/tap/ticker" # stock ticker
+brew "ticker" # stock ticker
 brew "tldr" # simplified man pages
 brew "tmux" # terminal multiplexer
 brew "tree" # pretty-print directory contents
