@@ -781,6 +781,7 @@ alias ta = tmux attach
 # Neomutt
 alias mail = neomutt
 
+alias weather = curl wttr.in
+
 use ~/.cache/starship/init.nu
-use ~/.config/nushell/scripts/weather/get-weather.nu get_weather
 use ~/.config/nushell/scripts/virtual_environments/conda.nu
