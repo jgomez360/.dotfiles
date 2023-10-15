@@ -24,6 +24,7 @@ tap "homebrew/core"
 
 # packages
 brew "bat" # cat with syntax highlighting
+brew "cointop" # TUI for crypto
 brew "direnv" # env variables based on $PWD
 brew "exa" # ls alternative
 brew "fd" # find alternative
@@ -42,6 +43,7 @@ brew "rsync" # incremental file transfers
 brew "shellcheck" # diagnostics for shell sripts
 brew "starship" # cross-shell prompt
 brew "stow" # link config files
+brew "achannarasappa/tap/ticker" # stock ticker
 brew "tldr" # simplified man pages
 brew "tmux" # terminal multiplexer
 brew "tree" # pretty-print directory contents
