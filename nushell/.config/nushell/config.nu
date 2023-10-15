@@ -763,6 +763,8 @@ $env.config = {
     ]
 }
 
+# Tools
+alias cat = bat
 alias python = python3
 alias vim = nvim
 
@@ -779,9 +781,11 @@ alias graph = git log --all --decorate --oneline --graph
 alias ta = tmux attach
 
 # Neomutt
-alias mail = neomutt
+alias m = neomutt
 
-alias weather = curl wttr.in
+# Useful sites
+alias l = curl ipinfo.io
+alias w = curl wttr.in
 
 use ~/.cache/starship/init.nu
 use ~/.config/nushell/scripts/virtual_environments/conda.nu

@@ -23,6 +23,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 
 # packages
+brew "bat" # cat with syntax highlighting
 brew "direnv" # env variables based on $PWD
 brew "exa" # ls alternative
 brew "fd" # find alternative
