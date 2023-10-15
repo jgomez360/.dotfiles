@@ -14,11 +14,13 @@ right_format = """$all"""
 [aws]
 disabled = true
 
-# [os]
-# format = "[$symbol]($style)"
-# disabled = false
-# [os.symbols]
-# Macos = " "
+[hostname]
+format = '[$ssh_symbol](bold blue)on [$hostname](bold green) '
+disabled = false
+
+[username]
+format = '[$user]($style) '
+disabled = false
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
