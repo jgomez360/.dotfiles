@@ -28,6 +28,9 @@ return {
         -- use markdown format only for files in path
         vim.g.vimwiki_global_ext = 0
 
+        -- append file extension to links
+        vim.g.vimwiki_markdown_link_ext = 1
+
         -- vim.g.vimwiki_listsyms = "✗○◐●✓"
         vim.g.vimwiki_listsyms = " ○◐●✓"
     end,
