@@ -1,62 +1,79 @@
 # Dotfiles
 
-This is my collection of [configuration files](http://dotfiles.github.io/).
+This is my collection of [configuration files][dotfiles]
 
 ## Usage
 
-1. Install [Scoop](https://scoop.sh) and dependencies
+1. Install [Scoop][scoop]
 
 ```shell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
 irm get.scoop.sh | iex
+```
 
-# Install fd/gcc/nodejs/ripgrep
+2. Install fd/gcc/nodejs/ripgrep
+
+```shell
 scoop install main/fd
 scoop install main/gcc
 scoop install main/nodejs
 scoop install main/ripgrep
+```
 
-# Install nerd fonts
+3. Install nerd fonts
+
+```shell
 scoop bucket add nerd-fonts
 scoop install nerd-fonts/JetBrainsMono-NF
 ```
 
-2. Clone .dotfiles [repo](https://github.com/jgomez360/.dotfiles.git)
+4. Clone this repo
 
 ```shell
 git clone https://github.com/jgomez360/.dotfiles.git
 ```
 
-3. Install Alacritty
+5. Install Alacritty
 
 ```
 scoop bucket add extras
 scoop bucket add extras/alacritty
+```
 
-# Copy config from repo
+Copy Alacritty config from repo
+
+```
 mkdir ~AppData\Roaming\alacritty
 cp -r ~\.dotfiles\alacritty\.config\alacritty\ ~\AppData\Roaming\alacritty\
 ```
 
-4. Install Starship
+6. Install Starship
 
 ```
 scoop bucket add starship
+```
 
-# Add to end of PowerShell config ($PROFILE)
+Add to end of PowerShell config ($PROFILE)
+
+```
 Invoke-Expression (&starship init powershell)
+```
 
-# Copy config from repo
+Copy Starship config from repo
+
+```
 cp ~\.dotfiles\starship\.config\starship.toml ~\.config\
 ```
 
-5. Install NeoVim
+7. Install NeoVim
 
 ```
-# Install neovim
 scoop install neovim
+```
 
-# Copy config from repo
+Copy NeoVim config from repo
+
+```
 cp -r ~\.dotfiles\neovim\.config\nvim ~\AppData\Local\
 ```
 
@@ -84,3 +101,5 @@ npm install -g @fsouza/prettierd prettier-plugin-solidity
 [homebrew]: https://brew.sh
 [lsp]: https://github.com/neovim/nvim-lspconfig
 [stow]: https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
+[dotfiles]: http://dotfiles.github.io/
+[scoop]: https://scoop.sh
