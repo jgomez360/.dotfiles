@@ -45,7 +45,6 @@ brew "shellcheck" # diagnostics for shell sripts
 brew "starship" # cross-shell prompt
 brew "stow" # link config files
 brew "ticker" # stock ticker
-brew "task" # task management
 brew "tldr" # simplified man pages
 brew "tmux" # terminal multiplexer
 brew "tree" # pretty-print directory contents
