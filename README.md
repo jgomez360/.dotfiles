@@ -4,71 +4,63 @@ This is my collection of [configuration files](http://dotfiles.github.io/).
 
 ## Usage
 
-Pull the repository, and then create the symbolic links [using GNU
-stow][stow].
+1. Install [Scoop](https://scoop.sh) and dependencies
 
 ```shell
-$ git clone git@github.com:jgomez360/.dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ stow neovim # plus whatever else you'd like
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+irm get.scoop.sh | iex
+
+# Install fd/gcc/nodejs/ripgrep
+scoop install main/fd
+scoop install main/gcc
+scoop install main/nodejs
+scoop install main/ripgrep
+
+# Install nerd fonts
+scoop bucket add nerd-fonts
+scoop install nerd-fonts/JetBrainsMono-NF
+```
+
+2. Clone .dotfiles [repo](https://github.com/jgomez360/.dotfiles.git)
+
+```shell
+git clone https://github.com/jgomez360/.dotfiles.git
+```
+
+3. Install Alacritty
+
+```
+scoop bucket add extras
+scoop bucket add extras/alacritty
+
+# Copy config from repo
+mkdir ~AppData\Roaming\alacritty
+cp -r ~\.dotfiles\alacritty\.config\alacritty\ ~\AppData\Roaming\alacritty\
+```
+
+4. Install Starship
+
+```
+scoop bucket add starship
+
+# Add to end of PowerShell config ($PROFILE)
+Invoke-Expression (&starship init powershell)
+
+# Copy config from repo
+cp ~\.dotfiles\starship\.config\starship.toml ~\.config\
+```
+
+5. Install NeoVim
+
+```
+# Install neovim
+scoop install neovim
+
+# Copy config from repo
+cp -r ~\.dotfiles\neovim\.config\nvim ~\AppData\Local\
 ```
 
 ## Dependencies
-
-### [Homebrew][homebrew] to install packages.
-
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Then in this repo run:
-
-```shell
-brew bundle install
-```
-
-### [Nix][nix] and [Nix Darwin][nix-darwin] to install packages.
-
-```shell
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-```
-
-```shell
-cd ~/.dotfiles/nix-darwin
-sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
-cp -R ~/.dotfiles/nix-darwin ~/.config/
-```
-
-## Setup
-
-Build nix-darwin config
-
-```shell
-cd ~.config/nix-darwin
-nix run nix-darwin -- switch --flake .
-```
-
-To rebuild nix-darwin config
-
-```shell
-cd ~.config/nix-darwin
-darwin-rebuild switch --flake .
-```
-
-Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm.git)
-
-```shell
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-Setup fish as default shell
-
-```shell
-fish
-fish_add_path /home/linuxbrew/.linuxbrew/bin
-echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
-chsh -s /home/linuxbrew/.linuxbrew/bin/fish
-```
 
 Create virtual Python environment just for NeoVim.
 
@@ -88,8 +80,6 @@ installed:
 npm install -g @fsouza/prettierd prettier-plugin-solidity
 ```
 
-[nix]: https://github.com/DeterminateSystems/nix-installer
-[nix-darwin]: https://github.com/LnL7/nix-darwin
 [neovim]: https://neovim.io/
 [homebrew]: https://brew.sh
 [lsp]: https://github.com/neovim/nvim-lspconfig
