@@ -19,7 +19,7 @@ return {
     "saecki/crates.nvim",
     dependencies = {
       "plenary.nvim",
-      "null-ls.nvim",
+      "stevearc/conform.nvim",
     },
 
     event = "BufRead Cargo.toml",

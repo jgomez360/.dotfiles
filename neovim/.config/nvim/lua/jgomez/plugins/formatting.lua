@@ -7,9 +7,13 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        -- json = { "prettierd" },
-        -- yaml = { "prettierd" },
-        -- markdown = { "prettierd" },
+        beancount = { "bean_format" },
+        json = { "prettierd" },
+        yaml = { "prettierd" },
+        solidity = { "prettierd" },
+        toml = { "taplo" },
+        markdown = { "prettierd" },
+        rust = { "rustfmt" },
         lua = { "stylua" },
         python = { "isort", "black" },
       },
