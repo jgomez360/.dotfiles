@@ -6,6 +6,11 @@ return {
     local conform = require("conform")
 
     conform.setup({
+      formatters = {
+        prettierd = {
+          command = "prettierd --plugin=prettier-plugin-solidity",
+        },
+      },
       formatters_by_ft = {
         beancount = { "bean_format" },
         json = { "prettierd" },
