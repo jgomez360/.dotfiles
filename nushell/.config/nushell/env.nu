@@ -99,6 +99,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
 
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/miniconda3/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.bifrost/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.foundry/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.huff/bin')
