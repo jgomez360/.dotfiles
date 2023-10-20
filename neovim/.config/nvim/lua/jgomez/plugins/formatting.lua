@@ -8,6 +8,17 @@ return {
 
     conform.setup({
       formatters = {
+        bean_black = {
+          meta = {
+            url = "https://github.com/LaunchPlatform/beancount-black",
+            description = "Opinionated code formatter, just like Python's black code formatter but for Beancount",
+          },
+          command = "bean-black",
+          args = { "-n", "-s", "$FILENAME" },
+          cwd = util.root_file({
+            "main.beancount",
+          }),
+        },
         prettierd_solidity = {
           meta = {
             url = "https://github.com/prettier-solidity/prettier-plugin-solidity",
@@ -36,7 +47,7 @@ return {
         },
       },
       formatters_by_ft = {
-        beancount = { "bean_format" },
+        beancount = { "bean_black" },
         json = { "prettierd" },
         yaml = { "prettierd" },
         solidity = { "prettierd_solidity" },
