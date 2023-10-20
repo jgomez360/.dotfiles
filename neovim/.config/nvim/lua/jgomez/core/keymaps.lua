@@ -1,73 +1,64 @@
-local opt = vim.opt -- for conciseness
+-- set leader key to space
+vim.g.mapleader = " "
 
--- Use virtual env just for NeoVim
-vim.g.loaded_node_provider = nil
-vim.g.loaded_python3_provider = nil
-vim.g.node_host_prog = vim.env.HOME .. "/miniconda3/envs/neovim/bin/neovim-node-host"
-vim.g.python3_host_prog = vim.env.HOME .. "/miniconda3/envs/neovim/bin/python3"
+local keymap = vim.keymap -- for conciseness
 
--- Disable unused remote providers
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_python_provider = 0
-vim.g.loaded_ruby_provider = 0
+---------------------
+-- General Keymaps -------------------
 
--- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+-- use jk to exit insert mode
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+-- move around in insert mode
+keymap.set("i", "<C-j>", "<C-o>gj", { desc = "Move down in insert mode" })
+keymap.set("i", "<C-k>", "<C-o>gk", { desc = "Move up in insert mode" })
+keymap.set("i", "<C-h>", "<Left>", { desc = "Move left in insert mode" })
+keymap.set("i", "<C-l>", "<Right>", { desc = "Move right in insert mode" })
 
--- tabs & indentation
--- opt.tabstop = 4 -- 4 spaces for tabs
-opt.softtabstop = 4 -- 4 spaces on tab press
-opt.shiftwidth = 4 -- 4 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-opt.smartindent = true -- indent reacts to the syntax/style of the code
+keymap.set({ "n" }, "H", "^", { desc = "Move to start of line" })
+keymap.set({ "n" }, "L", "$", { desc = "Move to end of line" })
 
--- line wrapping
-opt.wrap = false -- disable line wrapping
+-- clear search highlights
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append("<>[]hl")
+-- delete single character without copying into register
+keymap.set("n", "x", '"_x')
 
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
--- opt.hlsearch = false -- do not highlight all search matches
-opt.incsearch = true -- highlight the searching string while typing
+-- increment/decrement numbers
+keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
+-- navigate buffers
+keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Go to next buffer" }) --  go to next buffer
+keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Go to previous buffer" }) --  go to previous buffer
+keymap.set("n", "<leader>x", ":Bdelete<CR>", { desc = "Close the current buffer" }) --  close current buffer
 
--- command line auto completion
-opt.wildmenu = true
-opt.wildmode = "longest,list,full"
+-- window management
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- appearance
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true -- emits true (24-bit) colours in the terminal
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+keymap.set("n", "n", "nzzzv", { desc = "Keep search items in middle of screen" })
+keymap.set("n", "N", "Nzzzv", { desc = "Keep search items in middle of screen" })
 
--- Have some context around the current line always on screen
-opt.scrolloff = 8
-opt.sidescrolloff = 5
+keymap.set(
+  "n",
+  "<leader>s",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Edit all instances of word under cursor" }
+)
 
--- show trailing whitespace as -, tabs as >-
-vim.o.listchars = "tab:>-,trail:-"
-vim.o.list = true
+keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
+keymap.set("v", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
 
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text up" })
 
--- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
-
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
-
--- turn off swapfile
-opt.swapfile = false
+keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without losing buffer" })
