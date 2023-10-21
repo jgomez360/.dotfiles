@@ -39,6 +39,7 @@ brew "neomutt" # terminal mail client
 brew "neovim", args: ["HEAD"] # A better vim
 brew "node" # node (latest)
 brew "nushell" # modern shell
+brew "pcalc" # programmer calculator
 brew "python" # python (latest)
 brew "ripgrep" # very fast file searcher
 brew "rsync" # incremental file transfers
