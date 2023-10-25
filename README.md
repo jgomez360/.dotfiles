@@ -33,18 +33,18 @@ scoop install nerd-fonts/JetBrainsMono-NF
 git clone https://github.com/jgomez360/.dotfiles.git
 ```
 
-5. Install Alacritty
+5. Install Wezterm
 
 ```
 scoop bucket add extras
-scoop bucket add extras/alacritty
+scoop install extras/wezterm
 ```
 
-Copy Alacritty config from repo
+Copy Wezterm config from repo
 
 ```
-mkdir ~AppData\Roaming\alacritty
-cp -r ~\.dotfiles\alacritty\.config\alacritty\ ~\AppData\Roaming\alacritty\
+mkdir ~\.config\wezterm
+cp ~\.dotfiles\wezterm\.config\wezterm\.wezterm.lua ~\.config\wezterm\.wezterm.lua
 ```
 
 6. Install Starship
