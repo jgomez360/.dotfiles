@@ -44,13 +44,13 @@ Copy Wezterm config from repo
 
 ```
 mkdir ~\.config\wezterm
-cp ~\.dotfiles\wezterm\.config\wezterm\.wezterm.lua ~\.config\wezterm\.wezterm.lua
+cp ~\.dotfiles\wezterm\.config\wezterm\wezterm.lua ~\.config\wezterm\wezterm.lua
 ```
 
 6. Install Starship
 
 ```
-scoop bucket add starship
+scoop install main/starship
 ```
 
 Add to end of PowerShell config ($PROFILE)
@@ -79,11 +79,33 @@ cp -r ~\.dotfiles\neovim\.config\nvim ~\AppData\Local\
 
 ## Dependencies
 
+Install required software
+
+```shell
+scoop install 7zip innounp dark
+```
+
+Install pyenv
+
+```shell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+Install python
+
+```shell
+pyenv update
+pyenv install 3.11.6
+pyenv rehash
+pyenv versions
+pyenv global 3.11.6
+```
+
 Create virtual Python environment just for NeoVim.
 
 ```shell
 python -m venv ~/envs/neovim
-source ~/envs/neovim/bin/activate.fish
+./envs/neovim/Scripts/Activate.ps1
 python -m pip install pynvim
 deactivate
 ```
