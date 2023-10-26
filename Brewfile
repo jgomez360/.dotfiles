@@ -27,8 +27,9 @@ tap "homebrew/core"
 brew "bat" # cat with syntax highlighting
 brew "cointop" # TUI for crypto
 brew "direnv" # env variables based on $PWD
-brew "exa" # ls alternative
+brew "eza" # ls alternative
 brew "fd" # find alternative
+brew "fish" # modern shell
 brew "fzf" # Fuzzy file searcher, used in scripts and in vim
 brew "git" # Git version control (latest version)
 brew "glow" # markdown viewer
@@ -38,7 +39,6 @@ brew "lynx" # text-based web browser to render html in neomutt
 brew "neomutt" # terminal mail client
 brew "neovim", args: ["HEAD"] # A better vim
 brew "node" # node (latest)
-brew "nushell" # modern shell
 brew "pcalc" # programmer calculator
 brew "python" # python (latest)
 brew "ripgrep" # very fast file searcher

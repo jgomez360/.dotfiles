@@ -453,10 +453,11 @@ live_config_reload: true
 #   - (Windows) powershell
 shell:
   # program: /bin/bash
-  program: /opt/homebrew/bin/nu
-  args:
-    - --config "~/.config/nushell/config.nu"
-      --env-config "~/.config/nushell/env.nu"
+  program: /opt/homebrew/bin/fish
+  # program: /opt/homebrew/bin/nu
+  # args:
+  #   - --config "~/.config/nushell/config.nu"
+  #     --env-config "~/.config/nushell/env.nu"
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

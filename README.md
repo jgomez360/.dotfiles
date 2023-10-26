@@ -15,44 +15,43 @@ $ stow neovim # plus whatever else you'd like
 
 ## Dependencies
 
-* [Homebrew][neovim] to install packages.
+- [Homebrew][homebrew] to install packages.
+
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 Then in this repo run:
+
 ```shell
 brew bundle install
 ```
+
 On Linux, install `trash` command:
+
 ```shell
 npm install -g trash-cli
 ```
 
-I install [Conda][conda], specifically [Miniconda][miniconda], to manage
-Node and Python environments. 
+Create virtual Python environment just for NeoVim.
 
 ```shell
-conda create -n neovim -c conda-forge nodejs=18
-conda activate neovim
-npm install -g neovim
-conda install python=3.11
-python3 -m pip install --user --upgrade pynvim
-conda deactivate
+python -m venv ~/envs/neovim
+source ~/envs/neovim/bin/activate.fish
+python -m pip install pynvim
+deactivate
 ```
 
 The [language server configuration][lsp] requires the relevant servers to be
 installed:
 
-* Prettier and prettier-plugin-solidity for Solidity formatting.
+- Prettierd and prettier-plugin-solidity for Solidity formatting.
+
 ```shell
-conda activate neovim
 npm install -g @fsouza/prettierd prettier-plugin-solidity
-conda deactivate
 ```
 
 [neovim]: https://neovim.io/
 [homebrew]: https://brew.sh
-[conda]: https://conda.io/
-[miniconda]: https://docs.conda.io/en/latest/miniconda.html
 [lsp]: https://github.com/neovim/nvim-lspconfig
 [stow]: https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
