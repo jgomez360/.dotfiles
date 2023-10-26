@@ -41,9 +41,8 @@ return {
         "prettierd", -- prettier formatter
         "nomicfoundation-solidity-language-server", -- solidity formatter
         "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
         "pylint", -- python linter
+        "ruff", -- python formatter
         "taplo", -- toml formatter
       },
     })

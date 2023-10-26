@@ -55,7 +55,7 @@ return {
         markdown = { "prettierd" },
         rust = { "rustfmt" },
         lua = { "stylua" },
-        python = { "isort", "black" },
+        python = { "ruff_format" },
       },
       format_on_save = {
         lsp_fallback = true,
