@@ -21,7 +21,6 @@ elsif OS.linux?
 end
 
 tap "homebrew/bundle"
-tap "homebrew/core"
 
 # packages
 brew "bat" # cat with syntax highlighting
