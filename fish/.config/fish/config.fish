@@ -69,6 +69,10 @@ if not contains /opt/homebrew/sbin $PATH
     set -x PATH /opt/homebrew/sbin $PATH
 end
 
+if not contains /usr/local/bin $PATH
+    set -x PATH /usr/local/bin $PATH
+end
+
 if not contains /usr/local/sbin $PATH
     set -x PATH /usr/local/sbin $PATH
 end

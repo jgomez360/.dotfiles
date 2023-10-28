@@ -3,12 +3,13 @@ if OS.mac?
     tap "homebrew/cask-fonts"
     tap "koekeishiya/formulae"
     tap "achannarasappa/tap"
-
+      tap "homebrew/cask"
     brew "noti" # utility to display notifications from scripts
     brew "trash" # rm, but put in the trash rather than completely delete
 
     # Applications
     cask "alacritty"
+    cask "docker"
 
     # yabai
     brew "yabai"
@@ -17,6 +18,8 @@ if OS.mac?
     # Fonts
     cask "font-jetbrains-mono-nerd-font"
 elsif OS.linux?
+    brew "docker"
+    brew "docker-compose"
     brew "xclip" # access to clipboard (similar to pbcopy/pbpaste)
 end
 
