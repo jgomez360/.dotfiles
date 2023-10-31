@@ -128,5 +128,11 @@ return {
       -- root_dir = lspconfig.util.root_pattern(".prettierrc"),
       single_file_support = true,
     })
+
+    -- configure yaml server
+    lspconfig["yamlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
   end,
 }
