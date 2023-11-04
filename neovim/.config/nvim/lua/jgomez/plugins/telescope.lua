@@ -3,13 +3,16 @@ return {
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzy-native.nvim" },
+    "nvim-telescope/telescope-fzy-native.nvim",
     "nvim-tree/nvim-web-devicons",
+    "ThePrimeagen/git-worktree.nvim",
   },
   config = function()
+    local git_worktree = require("git-worktree")
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
+    git_worktree.setup()
     telescope.setup({
       defaults = {
         file_ignore_patterns = { "^.git/", "node_modules" },
@@ -41,6 +44,7 @@ return {
     })
 
     telescope.load_extension("fzy_native")
+    telescope.load_extension("git_worktree")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -50,5 +54,17 @@ return {
     keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Fuzzy find git files" })
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap.set(
+      "n",
+      "<leader>fb",
+      "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",
+      { desc = "Find branch in git worktree" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fB",
+      "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
+      { desc = "Create branch in git worktree" }
+    )
   end,
 }
