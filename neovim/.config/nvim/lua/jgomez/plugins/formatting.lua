@@ -48,6 +48,7 @@ return {
       },
       formatters_by_ft = {
         beancount = { "bean_black" },
+        go = { "gofumpt", "goimports_reviser" },
         json = { "prettierd" },
         yaml = { "prettierd" },
         solidity = { "prettierd_solidity" },

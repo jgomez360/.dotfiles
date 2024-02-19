@@ -29,6 +29,7 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
+        "gopls",
         "lua_ls",
         "pyright",
         "rust_analyzer",
@@ -40,6 +41,8 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
+        "gofumpt", -- go formatter
+        "goimports-reviser", -- go imports formatter
         "prettierd", -- prettier formatter
         "nomicfoundation-solidity-language-server", -- solidity formatter
         "stylua", -- lua formatter
