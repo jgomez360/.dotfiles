@@ -33,6 +33,21 @@ On Linux, install `trash` command:
 npm install -g trash-cli
 ```
 
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm.git)
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Setup fish as default shell
+
+```shell
+fish
+fish_add_path /home/linuxbrew/.linuxbrew/bin
+echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /home/linuxbrew/.linuxbrew/bin/fish
+```
+
 Create virtual Python environment just for NeoVim.
 
 ```shell
