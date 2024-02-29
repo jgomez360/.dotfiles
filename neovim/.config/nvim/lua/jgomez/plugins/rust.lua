@@ -1,8 +1,8 @@
 return {
   {
-    "simrat39/rust-tools.nvim",
-
-    event = "FileType rust",
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    ft = { "rust" },
   },
 
   {
