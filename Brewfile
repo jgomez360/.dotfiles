@@ -29,6 +29,7 @@ tap "homebrew/bundle"
 brew "bat" # cat with syntax highlighting
 brew "cointop" # TUI for crypto
 brew "direnv" # env variables based on $PWD
+brew "duf" # disk usage/free utility
 brew "eza" # ls alternative
 brew "fd" # find alternative
 brew "fish" # modern shell

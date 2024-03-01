@@ -104,6 +104,7 @@ alias .5='cd ../../../../..'
 
 # tools
 alias cat='bat'
+alias df='duf'
 alias m='neomutt'
 alias ta='tmux attach'
 alias vim='nvim'
@@ -125,7 +126,6 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
 # ps
