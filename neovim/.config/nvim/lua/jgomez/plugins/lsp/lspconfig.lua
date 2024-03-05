@@ -115,10 +115,39 @@ return {
       },
     })
 
-    -- configure python server
-    lspconfig["pyright"].setup({
+    -- configure python servers
+    lspconfig.pyright.setup({
+      on_attach = on_attach,
+      settings = {
+        pyright = {
+          -- Using Ruff's import organizer
+          disableOrganizeImports = true,
+        },
+        python = {
+          analysis = {
+            -- Ignore all files for analysis to exclusively use Ruff for linting
+            ignore = { "*" },
+          },
+        },
+      },
+    })
+    lspconfig.ruff_lsp.setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      on_init = function(client)
+        if client.name == "ruff_lsp" then
+          client.server_capabilities.hoverProvider = false
+        end
+      end, -- Disable hover in favor of Pyright
+      init_options = {
+        settings = {
+          args = {
+            "--select=ALL",
+            "--extend-select=W,COM,ICN",
+            "--ignore=D100,E501,E722,COM812",
+          },
+        },
+      },
     })
 
     vim.g.rustaceanvim = {

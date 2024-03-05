@@ -32,6 +32,7 @@ return {
         "gopls",
         "lua_ls",
         "pyright",
+        "ruff_lsp",
         "rust_analyzer",
         "yamlls",
       },
@@ -46,7 +47,6 @@ return {
         "prettierd", -- prettier formatter
         "nomicfoundation-solidity-language-server", -- solidity formatter
         "stylua", -- lua formatter
-        "pylint", -- python linter
         "ruff", -- python formatter
         "taplo", -- toml formatter
       },
