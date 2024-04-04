@@ -39,7 +39,7 @@ return {
       -- Skip the confirmation popup for simple operations
       skip_confirm_for_simple_edits = false,
       -- Change this to customize the command used when deleting to trash
-      trash_command = "trash",
+      -- trash_command = "trash",
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
       prompt_save_on_select_new_entry = true,
       -- Oil will automatically delete hidden buffers after this delay

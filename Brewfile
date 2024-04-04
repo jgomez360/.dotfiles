@@ -5,7 +5,6 @@ if OS.mac?
     tap "achannarasappa/tap"
       tap "homebrew/cask"
     brew "noti" # utility to display notifications from scripts
-    brew "trash" # rm, but put in the trash rather than completely delete
 
     # Applications
     cask "alacritty"

@@ -27,12 +27,6 @@ Then in this repo run:
 brew bundle install
 ```
 
-On Linux, install `trash` command:
-
-```shell
-npm install -g trash-cli
-```
-
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm.git)
 
 ```shell
