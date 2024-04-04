@@ -3,9 +3,9 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  keys = {
-    { "<Leader>T", "<Cmd>TodoTelescope<CR>", desc = "Open TODOs in Telescope" },
-  },
+  -- keys = {
+  --   { "<Leader>T", "<Cmd>TodoTelescope<CR>", desc = "Open TODOs in Telescope" },
+  -- },
   opts = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
