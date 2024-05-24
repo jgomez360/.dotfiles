@@ -117,6 +117,7 @@ alias w='curl wttr.in'
 
 # Changing "ls" to "eza"
 alias la='eza -a -l -g --icons --git'
+alias ld='eza -l -g --icons --git --sort=modified --reverse'
 alias ll='eza -l -g --icons --git'
 alias ls='eza -g --icons --git'
 
