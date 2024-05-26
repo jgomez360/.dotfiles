@@ -21,4 +21,3 @@ if OS.mac?
     # Fonts
     cask "font-jetbrains-mono-nerd-font"
 end
-
