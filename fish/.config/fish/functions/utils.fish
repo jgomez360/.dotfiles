@@ -78,5 +78,17 @@ function take --argument number
     head -$number
 end
 
+# Function for direnv to enter tmux
+function autotmux --on-variable TMUX_SESSION_NAME
+    if test -n "$TMUX_SESSION_NAME" #only if set
+        if test -z $TMUX #not if in TMUX
+            if tmux has-session -t $TMUX_SESSION_NAME
+                command tmux attach-session -t "$TMUX_SESSION_NAME"
+            else
+                command tmux new-session -s "$TMUX_SESSION_NAME"
+            end
+        end
+    end
+end
 ### END OF FUNCTIONS ###
 
