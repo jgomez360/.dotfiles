@@ -138,6 +138,7 @@ alias pscpu='ps auxf | sort -nr -k 3'
 # git
 alias ga='git add'
 alias gb='git branch'
+alias gco='git checkout'
 alias gd='git diff'
 alias gs='git status'
 alias clone='git clone'
