@@ -64,5 +64,10 @@ return {
     )
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+
+    keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "List git branches" })
+    keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "List git commits" })
+    keymap.set("n", "<leader>gbc", "<cmd>Telescope git_bcommits<cr>", { desc = "List buffer's git commits" })
+    keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "List current git changes" })
   end,
 }
