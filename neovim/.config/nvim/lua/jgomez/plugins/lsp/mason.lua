@@ -32,6 +32,7 @@ return {
         "gopls",
         "lua_ls",
         "pyright",
+        "robotframework_ls",
         "ruff_lsp",
         "rust_analyzer",
         "yamlls",

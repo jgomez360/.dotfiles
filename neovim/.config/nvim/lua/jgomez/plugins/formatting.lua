@@ -54,6 +54,7 @@ return {
         solidity = { "prettierd_solidity" },
         toml = { "taplo" },
         markdown = { "prettierd" },
+        robot = { "robotidy" },
         rust = { "rustfmt" },
         lua = { "stylua" },
         python = { "ruff_format" },

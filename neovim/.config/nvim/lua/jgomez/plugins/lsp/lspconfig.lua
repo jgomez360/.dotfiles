@@ -152,6 +152,20 @@ return {
       },
     })
 
+    lspconfig.robotframework_ls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "robot" },
+      settings = {
+        robot = {
+          python = {
+            executable = "/py3.11/bin/python",
+          },
+          pythonpath = "/py3.11/bin/python",
+        },
+      },
+    })
+
     vim.g.rustaceanvim = {
       -- Plugin configuration
       tools = {},
