@@ -23,7 +23,6 @@ return {
   leader = { key = "a", mods = "CTRL" },
   hide_tab_bar_if_only_one_tab = true,
   keys = {
-    { key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
     { key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
     {
       key = "\\",

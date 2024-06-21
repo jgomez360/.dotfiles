@@ -11,13 +11,14 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a 
 irm get.scoop.sh | iex
 ```
 
-2. Install fd/gcc/nodejs/ripgrep
+2. Install fd/gcc/nodejs/ripgrep/openssh
 
 ```shell
 scoop install main/fd
 scoop install main/gcc
 scoop install main/nodejs
 scoop install main/ripgrep
+scoop install main/openssh
 ```
 
 3. Install nerd fonts
@@ -45,6 +46,13 @@ Copy Wezterm config from repo
 ```
 mkdir ~\.config\wezterm
 cp ~\.dotfiles\wezterm\.config\wezterm\wezterm.lua ~\.config\wezterm\wezterm.lua
+```
+
+Copy Powershell config from repo to $PROFILE
+
+```
+echo $PROFILE
+cp ~\.dotfiles\powershell\profile.ps1 ./{$PROFILE}
 ```
 
 6. Install Starship
