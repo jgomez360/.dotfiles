@@ -33,7 +33,7 @@ history = 10000
 multiplier = 3
 
 [shell]
-program = "/opt/homebrew/bin/fish"
+program = "/run/current-system/sw/bin/fish"
 
 [window]
 decorations = "buttonless"

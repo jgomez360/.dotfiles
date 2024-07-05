@@ -34,9 +34,6 @@ set -x MANPAGER "nvim +Man!"
 # set -x MANPAGER "less"
 
 ### ADDING TO THE PATH
-# First line removes the path; second line sets it.  Without the first line, your path gets massive and fish becomes very slow.
-# set -e fish_user_paths
-# set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.bifrost/bin $HOME/.cargo/bin $HOME/.foundry/bin $HOME/.huff/bin /opt/homebrew/bin /opt/homebrew/sbin /usr/local/bin $fish_user_paths
 if not contains $HOME/.bin $PATH
     set -x PATH $HOME/.bin $PATH
 end
@@ -59,6 +56,10 @@ end
 
 if not contains $HOME/.huff/bin $PATH
     set -x PATH $HOME/.huff/bin $PATH
+end
+
+if not contains /run/current-system/sw/bin $PATH
+    set -x PATH /run/current-system/sw/bin $PATH
 end
 
 if not contains /opt/homebrew/bin $PATH
@@ -104,7 +105,7 @@ alias .5='cd ../../../../..'
 
 # tools
 alias cat='bat'
-alias df='duf'
+alias df='dust'
 alias m='neomutt'
 alias ta='tmux attach'
 alias vim='nvim'

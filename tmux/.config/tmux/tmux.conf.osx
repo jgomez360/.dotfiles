@@ -1,3 +1,3 @@
 # Use fish installed via homebrew
-set-option -g default-shell /opt/homebrew/bin/fish
-set-option -g default-command "/opt/homebrew/bin/fish"
+set-option -g default-shell /run/current-system/sw/bin/fish
+set-option -g default-command "/run/current-system/sw/bin/fish"
