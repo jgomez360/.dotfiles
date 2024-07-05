@@ -131,7 +131,13 @@ alias m='neomutt'
 alias ta='tmux attach'
 alias vim='nvim'
 
-# Neomutt
+# Nix
+alias nixre="darwin-rebuild switch"
+alias nixgc="nix-collect-garbage -d"
+alias nixq="nix-env -qaP"
+alias nixupgrade="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'"
+alias nixup="nix-env -u"
+alias nixcfg="nvim ~/.nixpkgs/darwin-configuration.nix"
 
 # Useful sites
 alias l='curl ipinfo.io'
