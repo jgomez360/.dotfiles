@@ -58,8 +58,16 @@ if not contains $HOME/.huff/bin $PATH
     set -x PATH $HOME/.huff/bin $PATH
 end
 
+if not contains $HOME/.nix-profile/bin $PATH
+    set -x PATH $HOME/.nix-profile/bin $PATH
+end
+
 if not contains /run/current-system/sw/bin $PATH
     set -x PATH /run/current-system/sw/bin $PATH
+end
+
+if not contains /nix/var/nix/profiles/default/bin $PATH
+    set -x PATH /nix/var/nix/profiles/default/bin $PATH
 end
 
 if not contains /opt/homebrew/bin $PATH
@@ -76,6 +84,19 @@ end
 
 if not contains /usr/local/sbin $PATH
     set -x PATH /usr/local/sbin $PATH
+end
+
+# Setup NIX PATH
+if not contains $HOME/.nix-defexpr/channels $NIX_PATH
+    set -x NIX_PATH $HOME/.nix-defexpr/channels $NIX_PATH
+end
+
+if not contains darwin-config=$HOME/.nixpkgs/darwin-configuration.nix $NIX_PATH
+    set -x NIX_PATH darwin-config=$HOME/.nixpkgs/darwin-configuration.nix $NIX_PATH
+end
+
+if not contains /nix/var/nix/profiles/per-user/root/channels $NIX_PATH
+    set -x NIX_PATH /nix/var/nix/profiles/per-user/root/channels $NIX_PATH
 end
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
