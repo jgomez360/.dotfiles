@@ -5,8 +5,14 @@ if OS.mac?
     tap "achannarasappa/tap"
     tap "homebrew/cask"
 
+    # Virtualization
+    cask "docker"
+
     # Terminal
     cask "alacritty"
+
+    # Proxy
+    cask "squidman"
 
     # Window Managment
     brew "skhd"

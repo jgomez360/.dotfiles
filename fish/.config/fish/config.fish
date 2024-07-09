@@ -66,10 +66,6 @@ if not contains /run/current-system/sw/bin $PATH
     set -x PATH /run/current-system/sw/bin $PATH
 end
 
-if not contains /nix/var/nix/profiles/default/bin $PATH
-    set -x PATH /nix/var/nix/profiles/default/bin $PATH
-end
-
 if not contains /opt/homebrew/bin $PATH
     set -x PATH /opt/homebrew/bin $PATH
 end
@@ -84,19 +80,6 @@ end
 
 if not contains /usr/local/sbin $PATH
     set -x PATH /usr/local/sbin $PATH
-end
-
-# Setup NIX PATH
-if not contains $HOME/.nix-defexpr/channels $NIX_PATH
-    set -x NIX_PATH $HOME/.nix-defexpr/channels $NIX_PATH
-end
-
-if not contains darwin-config=$HOME/.nixpkgs/darwin-configuration.nix $NIX_PATH
-    set -x NIX_PATH darwin-config=$HOME/.nixpkgs/darwin-configuration.nix $NIX_PATH
-end
-
-if not contains /nix/var/nix/profiles/per-user/root/channels $NIX_PATH
-    set -x NIX_PATH /nix/var/nix/profiles/per-user/root/channels $NIX_PATH
 end
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
@@ -132,12 +115,11 @@ alias ta='tmux attach'
 alias vim='nvim'
 
 # Nix
-alias nixre="darwin-rebuild switch"
+alias nixre="darwin-rebuild switch --flake .#simple"
 alias nixgc="nix-collect-garbage -d"
 alias nixq="nix-env -qaP"
-alias nixupgrade="sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'"
 alias nixup="nix-env -u"
-alias nixcfg="nvim ~/.nixpkgs/darwin-configuration.nix"
+alias nixcfg="nvim ~/.config/nix-darwin/flake.nix"
 
 # Useful sites
 alias l='curl ipinfo.io'
