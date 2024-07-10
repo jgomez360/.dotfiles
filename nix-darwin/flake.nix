@@ -28,7 +28,8 @@
             pkgs.neovim
             pkgs.neomutt
             pkgs.nodejs_22
-            pkgs.python3
+            pkgs.poetry
+            pkgs.python312
             pkgs.ripgrep
             pkgs.rsync
             pkgs.shellcheck

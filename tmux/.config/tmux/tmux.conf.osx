@@ -1,3 +1,3 @@
-# Use fish installed via homebrew
+# Use fish installed via nix
 set-option -g default-shell /run/current-system/sw/bin/fish
 set-option -g default-command "/run/current-system/sw/bin/fish"

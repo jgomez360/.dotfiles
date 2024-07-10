@@ -66,14 +66,6 @@ if not contains /run/current-system/sw/bin $PATH
     set -x PATH /run/current-system/sw/bin $PATH
 end
 
-if not contains /opt/homebrew/bin $PATH
-    set -x PATH /opt/homebrew/bin $PATH
-end
-
-if not contains /opt/homebrew/sbin $PATH
-    set -x PATH /opt/homebrew/sbin $PATH
-end
-
 if not contains /usr/local/bin $PATH
     set -x PATH /usr/local/bin $PATH
 end
