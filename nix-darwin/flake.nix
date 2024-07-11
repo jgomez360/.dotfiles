@@ -14,6 +14,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+            pkgs.ansible
             pkgs.bat
             pkgs.direnv
             pkgs.dust
