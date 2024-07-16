@@ -58,8 +58,8 @@ if not contains $HOME/.huff/bin $PATH
     set -x PATH $HOME/.huff/bin $PATH
 end
 
-if not contains $HOME/.nix-profile/bin $PATH
-    set -x PATH $HOME/.nix-profile/bin $PATH
+if not contains $HOME/.nix-defexpr/channels $NIX_PATH
+    set -x NIX_PATH $HOME/.nix-defexpr/channels $NIX_PATH
 end
 
 if not contains /run/current-system/sw/bin $PATH
