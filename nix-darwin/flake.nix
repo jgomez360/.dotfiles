@@ -43,6 +43,7 @@
             pkgs.vim
             pkgs.wget
             pkgs.wireguard-go
+            pkgs.wireguard-tools
         ];
 
       # Auto upgrade nix package and the daemon service.
